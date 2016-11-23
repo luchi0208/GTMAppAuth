@@ -24,7 +24,7 @@ requests with AppAuth.
   s.authors      = { "William Denniss" => "wdenniss@google.com",
                    }
 
-  s.source       = { :git => "https://github.com/google/GTMAppAuth.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/luchi0208/GTMAppAuth.git", :tag => s.version }
 
   s.source_files = "Source/*.{h,m}"
   s.requires_arc = true

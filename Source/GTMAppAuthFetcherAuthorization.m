@@ -395,7 +395,13 @@ NSString *const GTMAppAuthFetcherAuthorizationErrorRequestKey = @"request";
   if (args.delegate || args.completionHandler) {
     // If the fetcher service provides a callback queue, we'll use that
     // (or if it's nil, we'll use the main thread) for callbacks.
-    dispatch_queue_t callbackQueue = self.fetcherService.callbackQueue;
+    //TODO: hot fix here
+    dispatch_queue_t callbackQueue = nil;
+    if ([self.fetcherService respondsToSelector:@selector(callbackQueue)]) {
+      
+        callbackQueue = self.fetcherService.callbackQueue;
+    }
+      
     if (!callbackQueue) {
       callbackQueue = dispatch_get_main_queue();
     }
